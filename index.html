@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>name Sort App by sneha</title>
+		<style>
+			*{text-align:center; font-size:50px; font-family:cambria;}
+			body{background-color:lightyellow;}
+
+		</style>
+
+	</head>
+	<body>
+		<h1> Sort My Name App</h1>
+		<form onsubmit ="sort()">
+			<input type="text" id="name" placeholder="Enter your name"/><br/><br/>
+			<input type="submit" value="sort"/>
+		
+		<form>
+		<h2 id ="msg">
+		<script>
+			function sort()
+			{
+				event.preventDefault();
+				let name = document.getElementById("name");
+				let msg = document.getElementById("msg");
+				if(name.value.trim()==="")
+				{
+					alert("Enter your name");
+					msg.innerHTML="";
+					name.value="";
+					name.focus();
+					return;
+				}
+				let org = name.value;
+				let sortname= org.split("").sort().join("");
+				msg.innerHTML=sortname;
+			}
+		</script>
+
+	</body>		
+<html>
